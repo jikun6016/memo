@@ -12,7 +12,7 @@ app = Flask(__name__)
 
 naver_client_id = '5mIMnmjf1F4BBZcpLnwu'
 naver_client_secret = '8ia6H9agTF'
-naver_redirect_uri = 'http://localhost:8000/auth'
+naver_redirect_uri = 'http://60162128-lb-1564298758.ap-northeast-2.elb.amazonaws.com:8000/auth'
 
 redis_host = '3.38.151.6'
 redis_port = "8000"
