@@ -74,7 +74,7 @@ def onLogin():
 # 사용한다면 아래 @app.route('/auth') 의 내용을 그 URL 로 바꿀 것
 @app.route('/auth')
 def onOAuthAuthorizationCodeRedirected():
-    # TODO: 아래 1 ~ 4 를 채워 넣으시오.
+   
     print("onOAuth Start")
     # 1. redirect uri 를 호출한 request 로부터 authorization code 와 state 정보를 얻어낸다.
     authorization_code = request.args.get('code')
