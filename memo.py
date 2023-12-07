@@ -12,10 +12,10 @@ app = Flask(__name__)
 
 naver_client_id = '5mIMnmjf1F4BBZcpLnwu'
 naver_client_secret = '8ia6H9agTF'
-naver_redirect_uri = 'http://localhost:8001/auth'
+naver_redirect_uri = 'http://localhost:8000/auth'
 
 redis_host = '3.38.151.6'
-redis_port = "6379"
+redis_port = "8000"
 redis_password = None
 # '''
 #   본인 app 의 것으로 교체할 것.
@@ -94,6 +94,8 @@ def onOAuthAuthorizationCodeRedirected():
     urlencoded = urllib.parse.urlencode(params)
     
     url = f'https://nid.naver.com/oauth2.0/token?{urlencoded}'
+    
+    print(url)
     response = requests.post(url);
     
     access_token = response.json()['access_token'];
@@ -175,4 +177,4 @@ def post_new_memo():
 
 
 if __name__ == '__main__':
-    app.run('0.0.0.0', port=8001, debug=True)
+    app.run('0.0.0.0', port=8000, debug=True)
