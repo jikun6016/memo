@@ -95,9 +95,9 @@ def onOAuthAuthorizationCodeRedirected():
     url = f'https://nid.naver.com/oauth2.0/token?{urlencoded}'
     
     print(f"{url} access token")
-    response = requests.get(url);
+    response = requests.get(url).json
     
-    access_token = response.json()['access_token'];
+    access_token = response.json()['access_token']
     print(access_token)
 
 
@@ -107,7 +107,7 @@ def onOAuthAuthorizationCodeRedirected():
     headers = {
         'Authorization': f'Bearer {access_token}'
     }
-    response = requests.post(url, headers=headers)
+    response = requests.post(url, headers=headers).json
     profile_info = response.json()
     print(profile_info)
     
