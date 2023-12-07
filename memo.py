@@ -75,7 +75,7 @@ def onLogin():
 @app.route('/auth')
 def onOAuthAuthorizationCodeRedirected():
     # TODO: 아래 1 ~ 4 를 채워 넣으시오.
-
+    print("onOAuth Start")
     # 1. redirect uri 를 호출한 request 로부터 authorization code 와 state 정보를 얻어낸다.
     authorization_code = request.args.get('code')
     state = request.args.get('state')
@@ -95,7 +95,7 @@ def onOAuthAuthorizationCodeRedirected():
     
     url = f'https://nid.naver.com/oauth2.0/token?{urlencoded}'
     
-    print(url)
+    print(f"{url} access token 호출")
     response = requests.post(url);
     
     access_token = response.json()['access_token'];
