@@ -86,7 +86,6 @@ def onOAuthAuthorizationCodeRedirected():
         'grant_type': 'authorization_code',
         'client_id': naver_client_id,
         'client_secret': naver_client_secret,
-        'redirect_uri': naver_redirect_uri,
         'code': authorization_code,
         'state': state
     }
